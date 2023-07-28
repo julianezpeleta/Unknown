@@ -1,7 +1,7 @@
 local Noclip = nil
 local Clip = nil
 
-function noclip()
+function noclip(N)
 	Clip = false
 	local function Nocl()
 		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
@@ -16,7 +16,7 @@ function noclip()
 	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
 end
 
-function clip()
+function clip(N)
 	if Noclip then Noclip:Disconnect() end
 	Clip = true
 end
